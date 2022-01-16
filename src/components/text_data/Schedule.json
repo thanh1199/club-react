@@ -1,0 +1,527 @@
+[
+    {
+        "id" : [{
+            "name" : "---月曜日---",
+            "weekday" : "Monday"
+            }],
+        "part0" : [],
+        "part1" : [
+            {
+                "name" : "Monday",
+                "room" : "1"
+            },
+            {
+                "name" : "教師入門",
+                "room" : "2"
+            },
+            {
+                "name" : "哲学",
+                "room" : "3"
+            },
+            {
+                "name" : "中級プログラミング実習",
+                "room" : "4"
+            }
+        ],
+        "part2" : [
+            {
+                "name" : "情報理論",
+                "room" : "1"
+            },
+            {
+                "name" : "Monday",
+                "room" : "2"
+            },
+            {
+                "name" : "Webプログラミング１",
+                "room" : "3"
+            },
+            {
+                "name" : "中級プログラミン実習",
+                "room" : "4"
+            },
+            {
+                "name" : "教育相談",
+                "room" : "5"
+            }
+        ],
+        "part3" : [
+            {
+                "name" : "心理学",
+                "room" : "1"
+            },
+            {
+                "name" : "統計学",
+                "room" : "2"
+            },
+            {
+                "name" : "Monday",
+                "room" : "3"
+            },
+            {
+                "name" : "Webプログラミング３",
+                "room" : "4"
+            },
+            {
+                "name" : "計量経済分析",
+                "room" : "5"
+            },
+            {
+                "name" : "教育社会学",
+                "room" : "6"
+            }
+        ],
+        "part4" : [
+            {
+                "name" : "ベンチャービジネス入門",
+                "room" : "1"
+            },
+            {
+                "name" : "英会話BasicⅡ",
+                "room" : "2"
+            },
+            {
+                "name" : "経営組織論",
+                "room" : "3"
+            },
+            {
+                "name" : "Monday",
+                "room" : "4"
+            },
+            {
+                "name" : "専門ゼミⅠ",
+                "room" : "5"
+            }
+        ],
+        "part5" : [
+            {
+                "name" : "Monday",
+                "room" : "1"
+            },
+            {
+                "name" : "特別支援教育",
+                "room" : "2"
+            }
+        ]
+    },
+    {
+        "id" : [{
+            "name" : "---火曜日---",
+            "weekday" : "Tuesday"
+            }],
+        "part0" : [],
+        "part1" : [
+            {
+                "name" : "Tuesday",
+                "room" : "大学院"
+            },
+            {
+                "name" : "教師入門",
+                "room" : "2"
+            },
+            {
+                "name" : "哲学",
+                "room" : "3"
+            },
+            {
+                "name" : "中級プログラミング実習",
+                "room" : "遠隔"
+            }
+        ],
+        "part2" : [
+            {
+                "name" : "情報理論",
+                "room" : "1"
+            },
+            {
+                "name" : "Tuesday",
+                "room" : "遠隔"
+            },
+            {
+                "name" : "Webプログラミング１",
+                "room" : "大学院"
+            },
+            {
+                "name" : "中級プログラミン実習",
+                "room" : "4"
+            },
+            {
+                "name" : "教育相談",
+                "room" : "5"
+            }
+        ],
+        "part3" : [
+            {
+                "name" : "心理学",
+                "room" : "大学院"
+            },
+            {
+                "name" : "統計学",
+                "room" : "2"
+            },
+            {
+                "name" : "Tuesday",
+                "room" : "遠隔"
+            },
+            {
+                "name" : "Webプログラミング３",
+                "room" : "4"
+            },
+            {
+                "name" : "計量経済分析",
+                "room" : "5"
+            },
+            {
+                "name" : "教育社会学",
+                "room" : ""
+            }
+        ],
+        "part4" : [
+            {
+                "name" : "ベンチャービジネス入門",
+                "room" : "大学院"
+            },
+            {
+                "name" : "英会話BasicⅡ",
+                "room" : "2"
+            },
+            {
+                "name" : "経営組織論",
+                "room" : "316"
+            },
+            {
+                "name" : "Tuesday",
+                "room" : "4"
+            },
+            {
+                "name" : "専門ゼミⅠ",
+                "room" : "5"
+            }
+        ],
+        "part5" : [
+            {
+                "name" : "Tuesday",
+                "room" : "1"
+            },
+            {
+                "name" : "特別支援教育",
+                "room" : "大学院"
+            }
+        ]
+    },
+    {
+        "id" : [{
+            "name" : "---水曜日---",
+            "weekday" : "Wednesday"
+            }],
+        "part0" : [],
+        "part1" : [
+            {
+                "name" : "Wednesday",
+                "room" : "大学院"
+            },
+            {
+                "name" : "教師入門",
+                "room" : "2"
+            },
+            {
+                "name" : "哲学",
+                "room" : "3"
+            },
+            {
+                "name" : "中級プログラミング実習",
+                "room" : "遠隔"
+            }
+        ],
+        "part2" : [
+            {
+                "name" : "情報理論",
+                "room" : "1"
+            },
+            {
+                "name" : "Wednesday",
+                "room" : "遠隔"
+            },
+            {
+                "name" : "Webプログラミング１",
+                "room" : "大学院"
+            },
+            {
+                "name" : "中級プログラミン実習",
+                "room" : "4"
+            },
+            {
+                "name" : "教育相談",
+                "room" : "5"
+            }
+        ],
+        "part3" : [
+            {
+                "name" : "心理学",
+                "room" : "大学院"
+            },
+            {
+                "name" : "統計学",
+                "room" : "2"
+            },
+            {
+                "name" : "Wednesday",
+                "room" : "遠隔"
+            },
+            {
+                "name" : "Webプログラミング３",
+                "room" : "4"
+            },
+            {
+                "name" : "計量経済分析",
+                "room" : "5"
+            },
+            {
+                "name" : "教育社会学",
+                "room" : ""
+            }
+        ],
+        "part4" : [
+            {
+                "name" : "ベンチャービジネス入門",
+                "room" : "大学院"
+            },
+            {
+                "name" : "英会話BasicⅡ",
+                "room" : "2"
+            },
+            {
+                "name" : "経営組織論",
+                "room" : "316"
+            },
+            {
+                "name" : "Wednesday",
+                "room" : "4"
+            },
+            {
+                "name" : "専門ゼミⅠ",
+                "room" : "5"
+            }
+        ],
+        "part5" : [
+            {
+                "name" : "プログラミング実践Ⅱ",
+                "room" : "1"
+            },
+            {
+                "name" : "Wednesday",
+                "room" : "大学院"
+            }
+        ]
+    },
+    {
+        "id" : [{
+            "name" : "---木曜日---",
+            "weekday" : "Thursday"
+            }],
+        "part0" : [],
+        "part1" : [
+            {
+                "name" : "Thursday",
+                "room" : "大学院"
+            },
+            {
+                "name" : "教師入門",
+                "room" : "2"
+            },
+            {
+                "name" : "哲学",
+                "room" : "3"
+            },
+            {
+                "name" : "中級プログラミング実習",
+                "room" : "遠隔"
+            }
+        ],
+        "part2" : [
+            {
+                "name" : "情報理論",
+                "room" : "1"
+            },
+            {
+                "name" : "Thursday",
+                "room" : "遠隔"
+            },
+            {
+                "name" : "Webプログラミング１",
+                "room" : "大学院"
+            },
+            {
+                "name" : "中級プログラミン実習",
+                "room" : "4"
+            },
+            {
+                "name" : "教育相談",
+                "room" : "5"
+            }
+        ],
+        "part3" : [
+            {
+                "name" : "心理学",
+                "room" : "大学院"
+            },
+            {
+                "name" : "統計学",
+                "room" : "2"
+            },
+            {
+                "name" : "Thursday",
+                "room" : "遠隔"
+            },
+            {
+                "name" : "Webプログラミング３",
+                "room" : "4"
+            },
+            {
+                "name" : "計量経済分析",
+                "room" : "5"
+            },
+            {
+                "name" : "教育社会学",
+                "room" : ""
+            }
+        ],
+        "part4" : [
+            {
+                "name" : "ベンチャービジネス入門",
+                "room" : "大学院"
+            },
+            {
+                "name" : "英会話BasicⅡ",
+                "room" : "2"
+            },
+            {
+                "name" : "経営組織論",
+                "room" : "316"
+            },
+            {
+                "name" : "Thursday",
+                "room" : "4"
+            },
+            {
+                "name" : "専門ゼミⅠ",
+                "room" : "5"
+            }
+        ],
+        "part5" : [
+            {
+                "name" : "プログラミング実践Ⅱ",
+                "room" : "1"
+            },
+            {
+                "name" : "Thursday",
+                "room" : "大学院"
+            }
+        ]
+    },
+    {
+        "id" : [{
+            "name" : "---金曜日---",
+            "weekday" : "Friday"
+            }],
+        "part0" : [],
+        "part1" : [
+            {
+                "name" : "Friday",
+                "room" : "大学院"
+            },
+            {
+                "name" : "教師入門",
+                "room" : "2"
+            },
+            {
+                "name" : "哲学",
+                "room" : "3"
+            },
+            {
+                "name" : "中級プログラミング実習",
+                "room" : "遠隔"
+            }
+        ],
+        "part2" : [
+            {
+                "name" : "情報理論",
+                "room" : "1"
+            },
+            {
+                "name" : "Friday",
+                "room" : "遠隔"
+            },
+            {
+                "name" : "Webプログラミング１",
+                "room" : "大学院"
+            },
+            {
+                "name" : "中級プログラミン実習",
+                "room" : "4"
+            },
+            {
+                "name" : "教育相談",
+                "room" : "5"
+            }
+        ],
+        "part3" : [
+            {
+                "name" : "心理学",
+                "room" : "大学院"
+            },
+            {
+                "name" : "統計学",
+                "room" : "2"
+            },
+            {
+                "name" : "Friday",
+                "room" : "遠隔"
+            },
+            {
+                "name" : "Webプログラミング３",
+                "room" : "4"
+            },
+            {
+                "name" : "計量経済分析",
+                "room" : "5"
+            },
+            {
+                "name" : "教育社会学",
+                "room" : ""
+            }
+        ],
+        "part4" : [
+            {
+                "name" : "ベンチャービジネス入門",
+                "room" : "大学院"
+            },
+            {
+                "name" : "英会話BasicⅡ",
+                "room" : "2"
+            },
+            {
+                "name" : "経営組織論",
+                "room" : "316"
+            },
+            {
+                "name" : "Friday",
+                "room" : "4"
+            },
+            {
+                "name" : "専門ゼミⅠ",
+                "room" : "5"
+            }
+        ],
+        "part5" : [
+            {
+                "name" : "プログラミング実践Ⅱ",
+                "room" : "1"
+            },
+            {
+                "name" : "Friday",
+                "room" : "大学院"
+            }
+        ]
+    }
+]

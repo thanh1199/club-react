@@ -1,0 +1,94 @@
+[
+    {
+        "id" : "header",
+        "text1" : "プログラマー会",
+        "text2" : "九州情報大学",
+        "text3" : "KiiS",
+        "text4" : "PgC",
+        "quick_info" : [
+            {
+                "now_time" : "processing",
+                "now_weather" : "fas fa-cloud-sun",
+                "now_temperature" : "20°"
+            },
+            {
+                "place" : " 九州情報大学",
+                "next1" : "曇り",
+                "next2" : "雨",
+                "next3" : "大風"
+            },
+            {
+                "tomorrow_weather" : "fas fa-cloud-sun-rain",
+                "tomorrow_temperature" : "3°"
+            },
+            [
+                "授業中科目名",
+                "processing",
+                "天気予報"
+            ]
+        ]
+    },
+    {
+        "id" : "main_nav",
+        "apps" : [
+            {
+                "id" : "Examinee",
+                "icon" : "fas fa-question-circle",
+                "content" : "受験者用"
+            },
+            {
+                "id" : "Links",
+                "icon" : "fas fa-link",
+                "content" : "リンクまとめ"
+            },
+            {
+                "id" : "FreeRoom",
+                "icon" : "fas fa-chalkboard-teacher",
+                "content" : "自由室"
+            },
+            {
+                "id" : "Bus",
+                "icon" : "fas fa-bus",
+                "content" : "バス時刻"
+            },
+            {
+                "id" : "InsideNews",
+                "icon" : "fas fa-graduation-cap",
+                "content" : "学事掲示板"
+            },
+            {
+                "id" : "Calendar",
+                "icon" : "fas fa-calendar-alt",
+                "content" : "日程"
+            },
+            {
+                "id" : "Teaching",
+                "icon" : "fab fa-discourse",
+                "content" : "授業レビュー"
+            },
+            {
+                "id" : "OutsideNews",
+                "icon" : "fas fa-info-circle",
+                "content" : "外部情報"
+            },
+            {
+                "id" : "AboutUs",
+                "icon" : "fas fa-users",
+                "content" : "部活紹介"
+            },
+            {
+                "id" : "Member",
+                "icon" : "fas fa-user",
+                "content" : "部員用"
+            }
+        ]
+    },
+    {
+        "id" : "footer",
+        "text1": "部員募集中です。",
+        "text2" : "気軽に連絡してください！",
+        "text3" : "Email: XX.xx.gmail.com",
+        "text4" : "申し込み Google Form",
+        "qrcode" : "./image/qrcode.png"
+    }
+]

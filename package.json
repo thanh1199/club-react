@@ -6,9 +6,19 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.24.0",
+    "cheerio": "^1.0.0-rc.10",
+    "clsx": "^1.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-google-charts": "^3.0.15",
+    "react-router-dom": "^6.1.1",
     "react-scripts": "5.0.0",
+    "react-spinners": "^0.11.0",
+    "request-promise": "^4.2.6",
+    "sass": "^1.45.1",
+    "scss": "^0.2.4",
+    "serve": "^13.0.2",
     "web-vitals": "^2.1.2"
   },
   "scripts": {
@@ -34,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "json-loader": "^0.5.7"
   }
 }

@@ -1,0 +1,63 @@
+
+
+$var: linear-gradient(45deg, #134E5E, #71B280);
+#backToMain {
+    font-size: 30px;
+    position: fixed;
+    z-index: 10;
+    top: 15px;
+    left: 15px;
+    width: fit-content;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: #1cd8d277;
+    // background-image: $var;
+    color: white;
+    cursor: pointer;
+
+    &:hover::before {
+        content: "Main Menu";
+        font-size: 25px;
+        position: absolute;
+        z-index: 20;
+        top: -2px;
+        right: -120px;
+        width: 150px;
+        text-align: center;
+        padding: 20px 15px;
+        border-radius: 40px;
+        transition: ease 0.2s;
+        clip-path: circle(35px at -50px);
+        background-image: $var;
+        animation: avatar 1s 2 alternate;
+    }
+}
+
+@keyframes avatar {
+    0% {
+    clip-path: circle(35px at -50px);
+    }
+    100% {
+    clip-path: circle(300px at -50px);
+    }
+}
+
+
+@media (max-width: 950px) {
+	#backToMain {
+		top: 85%;
+		left: 80%;
+        &:hover::before {
+            top: -2px;
+            right: 0;
+        }
+	}
+	@keyframes avatar {
+		0% {
+		clip-path: circle(35px at 180px);
+		}
+		100% {
+		clip-path: circle(300px at 180px);
+		}
+	}
+}

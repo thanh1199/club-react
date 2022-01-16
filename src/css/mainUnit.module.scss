@@ -1,0 +1,58 @@
+
+.mainUnitAppearance {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100%;
+    background-image: url(./image/background3.jpg);
+    background-size: cover;
+    animation: appearance 1.5s;
+    animation-timing-function: cubic-bezier(0.25,0.1,0.25,1);
+}
+.mainUnitClose {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 100%;
+    width: 100vw;
+    min-height: 100%;
+    background-image: url(./image/background3.jpg);
+    background-size: cover;
+    animation: close 1.5s;
+    animation-timing-function: cubic-bezier(0.25,0.1,0.25,1);
+}
+.background_lightMode {
+    background-image: linear-gradient(45deg, #ffeeee, #dffdff);
+}
+
+@keyframes appearance {
+    0% {
+        opacity: 0;
+        left: 100%;
+    }
+    100% {
+        opacity: 1;
+        left:0;
+    }
+}
+.mainUnitNone {
+    display: none;
+}
+@keyframes close {
+    0% {
+        opacity: 1;
+        left: 0;
+    }
+    100% {
+        opacity: 0;
+        left: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .mainUnitAppearance, .mainUnitClose {
+      background-size: 1200px;
+    }
+}

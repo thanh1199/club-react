@@ -1,0 +1,75 @@
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    min-height: 60vh;
+    margin: 10px 0 10px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.main_lightMode {
+    background-image: linear-gradient(45deg, #ffeeee, #dffdff);
+    margin: 0;
+}  
+.navIcons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100px;
+    margin: 20px;
+    padding: 10px 0;
+    border-radius: 20px;
+    transition: 0.1s ease-in;
+    cursor: pointer;
+    color: black;
+    i {
+        font-size: 50px;
+        color: rgb(255, 255, 255);
+    }
+    &:hover {
+        transform: scale(1.05, 1.05);
+        i {
+            font-size: 55px;
+            transition: ease-out 0.1s;
+        }
+    }
+
+    &:nth-child(1) {
+        background-image: linear-gradient(45deg, #2BC0E4, #EAECC6);
+    }
+    &:nth-child(2) {
+        background-image: linear-gradient(45deg, #085078, #85D8CE);
+    }
+    &:nth-child(3) {
+        background-image: linear-gradient(45deg, #4776E6, #8E54E9);
+    }
+    &:nth-child(4) {
+        background-image: linear-gradient(45deg, #614385, #516395);
+    }
+    &:nth-child(5) {
+        background-image: linear-gradient(45deg, #1D976C, #93F9B9);
+    }
+    &:nth-child(6) {
+        background-image: linear-gradient(45deg, #DD5E89, #F7BB97);
+    }
+    &:nth-child(7) {
+        background-image: linear-gradient(45deg, #1D2B64, #F8CDDA);
+    }
+    &:nth-child(8) {
+        background-image: linear-gradient(45deg, #F09819, #EDDE5D);
+    }
+    &:nth-child(9) {
+        background-image: linear-gradient(45deg, #403B4A, #E7E9BB);
+    }
+    &:nth-child(10) {
+        background-image: linear-gradient(45deg, #E55D87, #5FC3E4);
+    } 
+    // https://uigradients.com
+}
+
+@media (max-width: 600px) {
+    .main {
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    }
+}
+  
