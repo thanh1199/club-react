@@ -1,30 +1,21 @@
 
-import { useState } from 'react' 
-import { useEffect } from 'react'
-
 import clsx from 'clsx'
 import headerStyle from '../../css/header.module.scss'
 
 import lessons from '../text_data/Schedule.json'
-import TimeTable from './TimeTable'
 import ShowNextDay from './ShowNextDay'
 
-let today = []
-let now_time = ""
 let todayLessons = {}
 let part = ""
 let nextpart = ""
 
-function SubInfo () {
-    now_time = TimeTable()
-    const [TODAY, setTODAY] = useState(new Date())   
-    today = TODAY
+function SubInfo ({ today, now, tomorrow }) {
     if ((today.getDay() - 1)>-1 && (today.getDay() - 1)<5) {
         todayLessons = lessons[(today.getDay() - 1)]
     } else {
         todayLessons = lessons[5 - 1]
     }
-    switch (now_time) {
+    switch (now) {
         case '1限目':
             part = 'part1'
             nextpart = 'part2'
@@ -53,58 +44,25 @@ function SubInfo () {
             part = 'part0'
             nextpart = 'part0'
     }
-    useEffect(() => 
-        setInterval(() => 
-            setTODAY(() => {
-                return new Date()
-            }), 60000)
-    , [])
-    return (
-        <div className={clsx(headerStyle.info)} id={clsx(headerStyle.subInfo)}>
-            <Part />
-            {
-                todayLessons[part].map((lesson, index) => {
-                    return (<p key={index}>{lesson.name === undefined ? "" : `${lesson.name}`} {lesson.room === undefined ? "" : `(${lesson.room})`}</p>)
-                })
-            }
-            <NextPart />
-            {
-                todayLessons[nextpart].map((lesson, index) => {
-                    return (<p key={index}>{lesson.name === undefined ? "" : `${lesson.name}`} {lesson.room === undefined ? "" : `(${lesson.room})`}</p>)
-                })
-            }
-        </div>
-    )
+    return (<div className={clsx(headerStyle.info)} id={clsx(headerStyle.subInfo)}>
+        <Part part={part} nextpart={nextpart}/>
+        {
+            todayLessons[part].map((lesson, index) => (<p key={index}>
+                {lesson.name === undefined ? "" : `${lesson.name}`} 
+                {lesson.room === undefined ? "" : `(${lesson.room})`}
+            </p>))
+        }
+        <NextPart part={part} nextpart={nextpart} today={today} tomorrow={tomorrow} />
+        {
+            todayLessons[nextpart].map((lesson, index) => (<p key={index}>
+                {lesson.name === undefined ? "" : `${lesson.name}`} 
+                {lesson.room === undefined ? "" : `(${lesson.room})`}
+            </p>))
+        }
+    </div>)
 }
 
-function NowTime () {
-    const [nowTime, setNowTime] = useState(TimeTable())
-    useEffect(() => 
-        setInterval(() => 
-            setNowTime(() => {
-                return TimeTable()
-            }), 60000)
-    , [])
-    return nowTime
-}
-function Tomorrow () {
-    
-    const tomorrow = new Date()
-    tomorrow.setDate(tomorrow.getDate()+1)
-
-    const [Tomorrow, setNowTime] = useState(tomorrow.getDate())
-    useEffect(() => 
-        setInterval(() => 
-            setNowTime(() => {
-                const tomorrow = new Date()
-                tomorrow.setDate(tomorrow.getDate()+1)
-                return tomorrow.getDate()
-            }), 60000)
-    , [])
-    return Tomorrow
-}
-
-function Part () {
+function Part ({part, nextpart}) {
     if (!(part === 'part0' && nextpart ==='part0')) {
         if (part !== 'part0'){
             return (<p style={{textAlign: "left"}}> - 授業中 - ----- </p>)
@@ -115,7 +73,7 @@ function Part () {
         return ""
     }
 }
-function NextPart () {
+function NextPart ({ part, nextpart, today, tomorrow }) {
     if (nextpart !== 'part0') {
         return (<p style={{textAlign: "left"}}> - 次は - ----- </p>)
     }
@@ -123,15 +81,12 @@ function NextPart () {
         return (<p style={{textAlign: "left"}}> - 次は 昼休みです</p>)
     }
     return (<>
-        <>{part === "part5" ? <p>
-            <br />
-            ----- お疲れ様でした -----
-            <br />
-            <br />
-        </p> : ""}</>
-        <ShowNextDay milestone={today.getHours()>9}/>
+        {part === "part5" ? 
+        <p><br />----- お疲れ様でした -----<br /><br /></p> 
+        : 
+        ""}
+        <ShowNextDay today={today} tomorrow={tomorrow} />
     </>)
 }
 
-export { NowTime, Tomorrow }
 export default SubInfo

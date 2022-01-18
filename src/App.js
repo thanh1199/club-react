@@ -1,13 +1,12 @@
 
-import { useEffect, useState } from 'react';
-import CircleLoader from "react-spinners/CircleLoader";
+import { useState } from 'react';
 
 import './css/reset.css';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 
-function App() {
+function App({ defaultMode }) {
   // window.onclick = e => {
   //   console.log(e.target);  // to get the element
   //   console.log(e.target.tagName);  // to get the element tag name alone
@@ -37,17 +36,7 @@ function App() {
 
   //-----------------
 
-  const [loading, SetLoading] = useState(true)
-
-  let mode__ = localStorage.getItem("mode") ?? "lightMode"
-  const [mode, SetMode] = useState(mode__)
-
-  useEffect(() => {
-    setTimeout(() => {
-      SetLoading(() => false)
-    }, 2000);
-  }, [])
-
+  const [mode, SetMode] = useState(defaultMode)
 
   function HandleSetMode () {
     if (mode === "darkMode") {
@@ -59,29 +48,15 @@ function App() {
       localStorage.setItem("mode", "darkMode")
     }
   }
+
   return (
     <div className={`App body_${mode}`} style={{position: "relative"}}>
-      {
-        loading ?
-        <div className='loading'>
-        <CircleLoader 
-          margin={"30vw"} 
-          size={"20vw"} 
-          color={"rgb(149, 248, 255)"} 
-          loading={loading} 
-          speedMultiplier={2} 
-        />
-        </div>
-        :
-        <>
-        <div id='settingMode' onClick={() => HandleSetMode()}>
-          <div id="settingButton" className={mode}></div>
-        </div>
-        <Header mode = {mode} />
-        <Main mode = {mode} />
-        <Footer mode = {mode} />
-        </>
-      }
+      <div id='settingMode' onClick={() => HandleSetMode()}>
+        <div id="settingButton" className={mode}></div>
+      </div>
+      <Header mode = {mode} />
+      <Main mode = {mode} />
+      <Footer mode = {mode} />
     </div>
   );
 }

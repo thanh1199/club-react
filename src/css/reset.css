@@ -101,7 +101,6 @@ header {
   height: 100vh;
   padding-top: calc(50vh - 10vw); /*--> (100vh - 20vw) / 2 <--*/
   padding-left: 40vw;
-  background-color: rgba(0, 0, 0);
 }
 
 #settingMode {

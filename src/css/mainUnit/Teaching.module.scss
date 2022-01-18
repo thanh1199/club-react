@@ -23,8 +23,8 @@
 }
 
 #search {
-    margin: 20px 20vw 0 15vw;
-    transform: translate( 0, -60px);
+    margin: 0px 20vw 0 15vw;
+    padding-top: 20px;
     display: flex;
     justify-content: space-around;
     input {
@@ -179,7 +179,7 @@
 	}
 	#search {
 		transform: translate( 0, 0);
-		margin-bottom: 30px;
+        margin: 0px 20vw 30px 15vw;
         button {
             background-color: rgb(0, 28, 121);
         }
@@ -187,7 +187,7 @@
 }
 @media (max-width: 950px) {
 	#search {
-		margin: 20px 10vw;
+        margin: 0px 10vw 20px 10vw;
         input {
             font-size: 18px;
             ::placeholder {
@@ -214,7 +214,7 @@
 	#search {
 		display: inline-block;
 		height: fit-content;
-		margin: 20px 0;
+        margin: 0px 0 20px 0;
 		width: 100%;
         input {
             display: block;
