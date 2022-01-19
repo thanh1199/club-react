@@ -9,9 +9,10 @@ import teaching from '../../../css/mainUnit/Teaching.module.scss'
 import Search from './Teaching/Search'
 import ShowWords from './Teaching/ShowWords'
 import Result from './Teaching/Result'
-import BackToMain from './BackToMain'
+import Refresh from './Refresh'
 
 function Teaching ({ mode }) {
+    window.scrollTo({top: 0, behavior: "smooth"})
     const [body, setBody] = useState("welcome")
     const [options, words] = useGetOptions()
     const [choices, setChoices] = useState([])
@@ -24,8 +25,6 @@ function Teaching ({ mode }) {
     }
 
     const showResult = (result) => {
-        if (result === "searching") {
-        }
         if (Array.isArray(result)) {
             if (result.length === 1) {
                 setBody(() => result[0])
@@ -38,6 +37,10 @@ function Teaching ({ mode }) {
         }
     }
 
+    const refresher = () => {
+        setBody(() => "welcome")
+    }
+
     const resultStyle = {
         textAlign: "center", 
         color: "rgb(134, 255, 245)",
@@ -46,7 +49,7 @@ function Teaching ({ mode }) {
     }
 
     return (<div className={clsx(mainUnit.mainUnitAppearance, mainUnit[`background_${mode}`])}>
-        <BackToMain />
+        <Refresh page='Teaching' handleRefresh={() => refresher()} />
         <div id={clsx(teaching.title)} className={clsx(teaching[`title_${mode}`])}>
             <i className="fab fa-discourse"></i>
             <span style={{padding: "10px"}}>授業レビュー</span>

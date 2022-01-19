@@ -1,7 +1,7 @@
 
 
 $var: linear-gradient(45deg, #134E5E, #71B280);
-#backToMain {
+#refresh {
     display: block;
     font-size: 30px;
     position: fixed;
@@ -12,12 +12,9 @@ $var: linear-gradient(45deg, #134E5E, #71B280);
     padding: 15px;
     border-radius: 50%;
     background-color: #1cd8d277;
-    // background-image: $var;
     color: white;
     cursor: pointer;
-
-    &:hover::before {
-        content: "Main Menu";
+    .refreshBefore {
         font-size: 25px;
         position: absolute;
         z-index: 20;
@@ -30,6 +27,8 @@ $var: linear-gradient(45deg, #134E5E, #71B280);
         transition: ease 0.2s;
         clip-path: circle(35px at -50px);
         background-image: $var;
+    }
+    &:hover .refreshBefore {
         animation: avatar 1s 2 alternate;
     }
 }
@@ -45,10 +44,10 @@ $var: linear-gradient(45deg, #134E5E, #71B280);
 
 
 @media (max-width: 950px) {
-	#backToMain {
-		top: 85%;
+	#refresh {
+		top: 78%;
 		left: 80%;
-        &:hover::before {
+        &:hover .refreshBefore {
             top: -2px;
             right: 0;
         }
