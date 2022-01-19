@@ -9,7 +9,7 @@ import teaching from '../../../css/mainUnit/Teaching.module.scss'
 import Search from './Teaching/Search'
 import ShowWords from './Teaching/ShowWords'
 import Result from './Teaching/Result'
-import Refresh from './Refresh'
+import Refresh from './other/Refresh'
 
 function Teaching ({ mode }) {
     window.scrollTo({top: 0, behavior: "smooth"})
@@ -66,7 +66,7 @@ function Teaching ({ mode }) {
                     <ShowWords words={choices} onClick={handleChoices} isArray={true} />
                 </div> : (
                     (body === "noneData") ?
-                    <div style={{...resultStyle, color: "rgb(200, 255, 0)"}}>No Data</div>
+                    <div style={{...resultStyle, color: "rgb(200, 255, 0)"}}>一致するデータがありません。</div>
                     :
                     <Result mode={mode} data={body}/>
                 )

@@ -1,0 +1,18 @@
+
+.container {
+    height: fit-content;
+    position: absolute;
+    z-index: 5;
+    top: 80px;
+    left: 5%;
+    border-radius: 2px;
+    padding: 10px;
+    .option {
+        padding: 10px;
+        cursor: pointer;
+        &:hover, &:focus {
+            background-color: rgb(231, 253, 255);
+            color:rgb(0, 109, 117);
+        }
+    }
+}

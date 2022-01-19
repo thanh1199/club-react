@@ -24,7 +24,6 @@ $var: linear-gradient(45deg, #134E5E, #71B280);
         text-align: center;
         padding: 20px 15px;
         border-radius: 40px;
-        transition: ease 0.2s;
         clip-path: circle(35px at -50px);
         background-image: $var;
     }

@@ -1,7 +1,9 @@
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+
 import clsx from 'clsx'
 import teaching from '../../../../css/mainUnit/Teaching.module.scss'
+import Datalist from '../other/Datalist'
 
 
 function Search ({ mode, options, inputValue, showResult = f => f }) {
@@ -13,7 +15,10 @@ function Search ({ mode, options, inputValue, showResult = f => f }) {
 
     const [input, setInput] = useState(inputValue)
     const [needHistory, setNeedHistory] = useState(true)
+    const [showDatalist, setShowDatalist] = useState(false)
+
     useEffect(() => {setInput(() => inputValue)}, [inputValue])
+    const Input = useRef()
 
     const handleInput = (value) => {
         setInput(() => value)
@@ -21,7 +26,7 @@ function Search ({ mode, options, inputValue, showResult = f => f }) {
     }
 
     const handleSearch = (input__) => {
-        const input_ = (input__.trim())
+        const input_ = input__.trim()
         if (input_ !== "") {
             const final_input = input_.replace(/[&¥/¥¥#,+$~%.`|'":*?<>{}]/g, '')
             const resultArray = options.filter((option) => option.includes(final_input))
@@ -40,26 +45,34 @@ function Search ({ mode, options, inputValue, showResult = f => f }) {
             showResult(options)
         }
     }
+
+    const fillInput = (option) => setInput(() => option)
+
     return (<>
-        <div id={clsx(teaching.search)}>
+        <div id={clsx(teaching.search)} style={{position: "relative"}}>
             <input 
                 id='input'
                 className={clsx(teaching[`input_${mode}`])} 
                 type="text" 
                 required 
                 placeholder="フリン、線形代数、後期 ..." 
-                list={clsx(teaching.suggestions)}
+                list="suggestions"
                 value={input}
                 onChange={(e) => handleInput(e.target.value)}
+                onFocus={() => setShowDatalist(() => true)}
+                onBlur={() => setShowDatalist(() => false)}
+                autoComplete="off"
+                ref={Input}
             />
-            <datalist id={clsx(teaching.suggestions)}>
-                {
-                    needHistory ?
-                    showedHistory.map((h, i) => <option key={i}>{h}</option>)
-                    : 
-                    options.map((option, i) => <option key={i}>{option}</option>)
-                }
-            </datalist>
+            <Datalist 
+                show={showDatalist} 
+                mode={mode} 
+                condition={needHistory} 
+                lists={[showedHistory, options]} 
+                intimeValue={input}
+                handleSelect={fillInput}
+                dependenceWidth={Input}
+            />
             <button onClick={() => handleSearch(input)} >検索</button>
         </div>
     </>)
