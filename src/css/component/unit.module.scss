@@ -1,0 +1,14 @@
+
+.unitAppearance {
+    animation: appearance 1.5s;
+    animation-timing-function: cubic-bezier(0.25,0.1,0.25,1);
+}
+
+@keyframes appearance {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -3,9 +3,7 @@
 
 import { Chart } from 'react-google-charts'
 
-function QualificationChart (props) {
-
-  const mode = props.mode
+function QualificationChart ({ theme }) {
   return (
     <Chart
       width={'100%'}
@@ -25,7 +23,7 @@ function QualificationChart (props) {
           height: '85%',
         },
         colors: ['rgb(134, 255, 245)', 'rgb(100, 189, 181)', 'rgb(70, 131, 126)', 'rgb(43, 80, 77)'],
-        backgroundColor: mode==="lightMode" ? "white" : "black",
+        backgroundColor: theme==="soft" ? "white" : "black",
         fontSize: "18",
         pieSliceText: 'none',
         legend: {position: 'labeled', textStyle: {color: 'white', fontSize: "16"}}

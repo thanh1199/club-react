@@ -1,6 +1,6 @@
 
 import clsx from "clsx"
-import datalist from "../../../../css/mainUnit/Datalist.module.scss"
+import datalist from "../../../../css/component/Datalist.module.scss"
 
 function Datalist ({ 
     show=true, 
@@ -8,18 +8,15 @@ function Datalist ({
     condition=true, 
     lists=[], 
     intimeValue="", 
-    handleSelect=f=>f, 
-    dependenceWidth 
+    handleSelect=f=>f
 }) 
 {
-    if (dependenceWidth.current) {console.log(dependenceWidth.current.clientWidth)}
-    const width = dependenceWidth.current ? dependenceWidth.current.clientWidth : 300
+    // const width = dependenceWidth.current ? dependenceWidth.current.clientWidth : 300
 
     const style = {
         display: show ? "block" : "none",
         backgroundColor: mode === "darkMode" ? "black" : "white",
         color: mode === "darkMode" ? "white" : "black",
-        width: `${width*0.95}px`
     }
 
     const intimeOption__ = intimeValue.trim()

@@ -3,16 +3,17 @@ import { useState } from 'react'
 import { useGetOptions } from '../../../CustomHooks'
 
 import clsx from 'clsx'
-import mainUnit from '../../../css/mainUnit.module.scss'
-import teaching from '../../../css/mainUnit/Teaching.module.scss'
+import unit from '../../../css/component/unit.module.scss'
+import teaching from '../../../css/component/Teaching.module.scss'
 
 import Search from './Teaching/Search'
 import ShowWords from './Teaching/ShowWords'
 import Result from './Teaching/Result'
 import Refresh from './other/Refresh'
 
-function Teaching ({ mode }) {
+function Teaching ({ theme }) {
     window.scrollTo({top: 0, behavior: "smooth"})
+
     const [body, setBody] = useState("welcome")
     const [options, words] = useGetOptions()
     const [choices, setChoices] = useState([])
@@ -48,13 +49,15 @@ function Teaching ({ mode }) {
         padding: "15vh 0",
     }
 
-    return (<div className={clsx(mainUnit.mainUnitAppearance, mainUnit[`background_${mode}`])}>
-        <Refresh page='Teaching' handleRefresh={() => refresher()} />
-        <div id={clsx(teaching.title)} className={clsx(teaching[`title_${mode}`])}>
-            <i className="fab fa-discourse"></i>
-            <span style={{padding: "10px"}}>授業レビュー</span>
-        </div>
-        <Search mode={mode} options={options} inputValue={inputValue} showResult={showResult} />
+    return (<div className={clsx(unit.unitAppearance) + `body_${theme}`}>
+        <div id={clsx(teaching.subHeader)} />
+        {
+            body !== "welcome" ? 
+            <Refresh page='Teaching' handleRefresh={() => refresher()} />
+            :
+            <Refresh />
+        }
+        <Search theme={theme} options={options} inputValue={inputValue} showResult={showResult} />
         {
             (body === "welcome") ? 
             <div style={resultStyle}>この科目って何にを勉強するの？と思うあなたへ<br/>
@@ -68,7 +71,7 @@ function Teaching ({ mode }) {
                     (body === "noneData") ?
                     <div style={{...resultStyle, color: "rgb(200, 255, 0)"}}>一致するデータがありません。</div>
                     :
-                    <Result mode={mode} data={body}/>
+                    <Result theme={theme} data={body}/>
                 )
             )
         }

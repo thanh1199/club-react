@@ -1,8 +1,8 @@
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import clsx from 'clsx'
-import teaching from '../../../../css/mainUnit/Teaching.module.scss'
+import teaching from '../../../../css/component/Teaching.module.scss'
 import Datalist from '../other/Datalist'
 
 
@@ -18,7 +18,6 @@ function Search ({ mode, options, inputValue, showResult = f => f }) {
     const [showDatalist, setShowDatalist] = useState(false)
 
     useEffect(() => {setInput(() => inputValue)}, [inputValue])
-    const Input = useRef()
 
     const handleInput = (value) => {
         setInput(() => value)
@@ -49,20 +48,18 @@ function Search ({ mode, options, inputValue, showResult = f => f }) {
     const fillInput = (option) => setInput(() => option)
 
     return (<>
-        <div id={clsx(teaching.search)} style={{position: "relative"}}>
+        <div id={clsx(teaching.search)} >
             <input 
                 id='input'
                 className={clsx(teaching[`input_${mode}`])} 
                 type="text" 
                 required 
                 placeholder="フリン、線形代数、後期 ..." 
-                list="suggestions"
                 value={input}
                 onChange={(e) => handleInput(e.target.value)}
                 onFocus={() => setShowDatalist(() => true)}
                 onBlur={() => setShowDatalist(() => false)}
                 autoComplete="off"
-                ref={Input}
             />
             <Datalist 
                 show={showDatalist} 
@@ -71,7 +68,6 @@ function Search ({ mode, options, inputValue, showResult = f => f }) {
                 lists={[showedHistory, options]} 
                 intimeValue={input}
                 handleSelect={fillInput}
-                dependenceWidth={Input}
             />
             <button onClick={() => handleSearch(input)} >検索</button>
         </div>

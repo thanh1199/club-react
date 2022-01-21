@@ -1,7 +1,6 @@
 
 
-function DifficulityChart (props) {
-    const mode = props.mode
+function DifficulityChart ({ theme }) {
     const difficult = 0.6
     return (<>
         <div style={{
@@ -13,16 +12,17 @@ function DifficulityChart (props) {
             width: "100%",
             height: "10px",
             borderRadius: "5px",
-            border: mode === "lightMode" ? "1px solid rgb(0, 165, 177)" : "1px solid rgb(149, 248, 255)",
-            position: "relative"
+            border: theme === "soft" ? "1px solid rgb(0, 165, 177)" : "1px solid rgb(149, 248, 255)",
+            position: "relative",
+            zIndex: "5"
         }}><span style={{
             position: "absolute",
             top: "0",
             left: "0",
             height: "10px",
-            backgroundColor: mode === "lightMode" ? "rgb(0, 165, 177)" : "rgb(149, 248, 255)",
+            backgroundColor: theme === "soft" ? "rgb(0, 165, 177)" : "rgb(149, 248, 255)",
             borderRadius: "4px 2px 2px 4px",
-            boxShadow: mode=== "lightMode" ? "unset" : "0 0 4px 1px rgb(149, 248, 255)",
+            boxShadow: theme === "soft" ? "unset" : "0 0 4px 1px rgb(149, 248, 255)",
             width: `${difficult>50 ? difficult*100-1 : difficult*100+1}%`
         }}></span></div>
     </>)

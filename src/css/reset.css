@@ -67,15 +67,6 @@ body {
   overflow-x: hidden;
 }
 /*-----------------------*/
-.body_darkMode {
-  color: white;
-  background-color: #000000;
-  background-image: url(./image/background3.jpg);
-}
-.body_lightMode {
-  color: rgb(0, 0, 0);
-  background-image: unset;
-}
 
 header {
   display: flex;
@@ -87,13 +78,14 @@ header {
   background-color: rgb(0, 0, 0);
 }
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 2px;
 }
 .App {
   position: relative;
 }
 .loading {
+  background-color: white;
   position: absolute;
   top: 0;
   left: 0;
@@ -103,58 +95,45 @@ header {
   padding-left: 40vw;
 }
 
-#settingMode {
+#setThemes {
   position: fixed;
-  top: 5px;
-  left: 5px;
-  width: 10px;
-  height: 40px;
-  border-radius: 4px;
-  background-image: linear-gradient(rgb(0, 0, 0) 30%, white);
-  box-shadow: 0 0 2px 1px rgb(0, 247, 255);
+  top: 1vw;
+  left: 1vw;
+  z-index: 10;
+  width: fit-content;
+  cursor: pointer;
 }
-#settingButton {
-  position: absolute;
-  left: 0;
-  width: 10px;
-  height: 8px;
-  border-radius: 4px;
+#setThemes i {
+  font-size: 24px;
 }
-.darkMode {
-  top: 3%;
-  background-color: #ffffff;
-  animation: lightToDark 0.5s ease;
-}
-.lightMode {
-  top: 78%;
-  background-color: #000000;
-  animation: darkToLight 0.5s ease;
-}
-
-@keyframes lightToDark {
-  0% {
-    top: 78%;
-    opacity: 0;
-  }
-  100% {
-    top: 3%;
-    opacity: 1;
-  }
-}
-
-@keyframes darkToLight {
-  0% {
-    top: 3%;
-    opacity: 0;
-  }
-  100% {
-    top: 78%;
-    opacity: 1;
-  }
+.rotate {
+  transition: 0.5s ease;
+  transform: rotate(180deg);
 }
 
 @media (max-width: 1200px) {
   body {
     background-size: 1200px;
   }
+}
+
+/*------------THEMES--------------*/
+
+.body_code {
+  color: white;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #000000;
+  background-image: url(./image/background3.jpg);
+  background-size: cover;
+}
+@media (max-width: 1200px) {
+  .body_code {
+    background-size: 1200px;
+  }
+}
+
+.body_soft {
+  color: rgb(0, 0, 0);
+  background-image: unset;
 }

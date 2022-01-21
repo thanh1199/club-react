@@ -80,6 +80,11 @@
                 "id" : "Member",
                 "icon" : "fas fa-user",
                 "content" : "部員用"
+            },
+            {
+                "id" : "Themes",
+                "icon" : "fas fa-adjust",
+                "content" : "表示モード"
             }
         ]
     },

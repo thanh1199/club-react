@@ -1,20 +1,11 @@
 
 $var: linear-gradient(45deg, #134E5E, #71B280);
-.lightMode {
-  background-image: linear-gradient(45deg, #ffffe1, #dffdff);
-  border-bottom: solid 2px rgba(0, 0, 0, 0.3);
-}
 
-.headerFix {
+.clubNameFix {
   display: none;
 }
-.header {
-  // background-image: $var;
-  background-color: rgba(0, 28, 121, 0.8);
-  color: #ffffff;
+.clubName {
   text-shadow: 2px 1px 1px rgb(0, 81, 119);
-  box-shadow: 0 5px 8px rgb(0, 54, 99);
-
   width: fit-content;
   height: 100px;
   padding: 20px;
@@ -36,33 +27,13 @@ $var: linear-gradient(45deg, #134E5E, #71B280);
   }
 }
 
-.header_lightMode {
-  background-image: linear-gradient(0deg, #000046, #1CB5E0);
-  color: #ffffff;
-  text-shadow: none;
-  box-shadow: none;
-}
-
 .quickInfo {
-  color: white;
-  background-color: rgba(0, 28, 121, 0.8);
-  box-shadow: 0 5px 8px rgb(0, 54, 99);
   font-size: 18px;
-  width: 850px;
+  width: 900px;
   min-height: 120px;
   border-radius: 0 0 10px 10px;
   display: grid;
   grid-template-columns: repeat(5, 1fr); 
-}
-
-.quickInfo_lightMode {
-  color: rgb(0, 0, 0);
-  background-color: unset !important;
-  box-shadow: none;
-  ::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 107, 102, 0.6);
-    border-radius: 2px;
-  }
 }
 
 .info {
@@ -108,10 +79,10 @@ $var: linear-gradient(45deg, #134E5E, #71B280);
 } 
 
 @media (max-width: 1200px) {
-  .header {
+  .clubName {
     display: none;
   }
-  .headerFix {
+  .clubNameFix {
     display: block;
     position: fixed;
     top: 10px;
@@ -174,12 +145,39 @@ $var: linear-gradient(45deg, #134E5E, #71B280);
 }
 
 @media (max-width: 600px) {
-  .headerFix {
+  .clubNameFix {
     display: none;
   }
   .quickInfo {
     margin: unset;
     border-radius: unset;
     width: 100vw;
+  }
+}
+
+/*--------------THEMES----------*/
+.header_code {
+  background-color: rgba(0, 28, 121, 0.8);
+  color: #ffffff;
+}
+.header_soft {
+  background-image: linear-gradient(45deg, #ffffe1, #dffdff);
+  border-bottom: solid 2px rgba(0, 0, 0, 0.3);
+}
+
+.clubName_soft {
+  background-color: unset;
+  color: #000046;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+.quickInfo_soft {
+  color: rgb(0, 0, 0);
+  background-color: unset !important;
+  box-shadow: none;
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 107, 102, 0.6);
+    border-radius: 2px;
   }
 }

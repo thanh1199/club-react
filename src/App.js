@@ -1,62 +1,36 @@
 
-import { useState } from 'react';
-
 import './css/reset.css';
+import themesArray from "./components/text_data/themes.json"
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 
-function App({ defaultMode }) {
+import { useState } from 'react';
+
+function App({ theme }) {
   // window.onclick = e => {
   //   console.log(e.target);  // to get the element
   //   console.log(e.target.tagName);  // to get the element tag name alone
   // }  
 
-  
-// var axios = require('axios');
-// var data = '';
-
-// var config = {
-// method: 'get',
-// url: 'https://programmer-club.herokuapp.com/api/v1/Subjects/',
-// headers: { },
-// data : data
-// };
-
-// axios(config)
-// .then(function (response) {
-//   console.log(JSON.stringify(response.data));
-// })
-// .catch(function (error) {
-//   console.log(error);
-// });
-  
-
-
-
-  //-----------------
-
-  const [mode, SetMode] = useState(defaultMode)
-
-  function HandleSetMode () {
-    if (mode === "darkMode") {
-      SetMode(() => "lightMode")
-      localStorage.setItem("mode", "lightMode")
-    }
-    if (mode === "lightMode") {
-      SetMode(() => "darkMode")
-      localStorage.setItem("mode", "darkMode")
-    }
+  const [nowTheme, setNowTheme] = useState(theme)
+ 
+  const handleSetTheme = () => {
+    const now = themesArray.indexOf(nowTheme)
+    const next = (now + 1) % themesArray.length
+    localStorage.setItem("theme", themesArray[next])
+    document.getElementById("setThemes").classList.remove("rotate")
+    setTimeout(() => document.getElementById("setThemes").classList.add("rotate"), 200)
+    setNowTheme(() => themesArray[next])
   }
-
   return (
-    <div className={`App body_${mode}`} style={{position: "relative"}}>
-      <div id='settingMode' onClick={() => HandleSetMode()}>
-        <div id="settingButton" className={mode}></div>
+    <div theme="dark" className={`App body_${nowTheme}`} style={{position: "relative"}}>
+      <div id='setThemes' className='rotate' onClick={() => handleSetTheme()}>
+        <i className="fas fa-adjust"></i>
       </div>
-      <Header mode = {mode} />
-      <Main mode = {mode} />
-      <Footer mode = {mode} />
+      <Header theme = {nowTheme} />
+      <Main theme = {nowTheme}/>
+      <Footer theme = {nowTheme} />
     </div>
   );
 }

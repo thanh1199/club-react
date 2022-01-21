@@ -9,17 +9,15 @@
     }
 }
 
-/*----------------------------------*/
+/*-----------------THEMES-----------------*/
 
-.darkMode {
+.code {
     color: white;
     background-color: rgba(0, 28, 121, 0.6);
     box-shadow: 0 5px 8px rgb(0, 54, 99);
 }
 
-/*----------------------------------*/
-
-.lightMode {
+.soft {
     color: rgb(0, 0, 0);
     background-image: linear-gradient(45deg, thistle, #ffffff);
     box-shadow: 0 0 2px 2px rgb(189, 189, 189);
