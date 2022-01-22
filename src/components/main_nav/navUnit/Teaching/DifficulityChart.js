@@ -19,7 +19,7 @@ function DifficulityChart ({ theme }) {
             position: "absolute",
             top: "0",
             left: "0",
-            height: "10px",
+            height: "8px",
             backgroundColor: theme === "soft" ? "rgb(0, 165, 177)" : "rgb(149, 248, 255)",
             borderRadius: "4px 2px 2px 4px",
             boxShadow: theme === "soft" ? "unset" : "0 0 4px 1px rgb(149, 248, 255)",

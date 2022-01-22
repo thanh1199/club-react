@@ -34,7 +34,7 @@
         input {
             font-size: 22px;
             outline: none;
-            min-height: 38px;
+            min-height: 50px;
             width: 100%;
             padding: 8px;
             color: white;
@@ -49,9 +49,10 @@
     button {
         font-size: 22px;
         color: white;
-        width: 80px;
-        min-height: 38px;
-        padding: 5px;
+        width: 90px;
+        min-height: 50px;
+        height: fit-content;
+        padding: 10px;
         background-color: rgba(0, 28, 121, 0.8);
         border: none;
         border-radius: 5px;
@@ -61,12 +62,12 @@
         &::after {
             position: absolute;
             content: "";
-            width: 84px;
-            height: 30px;
+            width: calc(100% + 4px);
+            height: 50%;
             border-radius: inherit;
             background-image: linear-gradient(0deg , rgb(0, 247, 255), #ffffff00);
             z-index: 1;
-            top: 26px;
+            top: 48%;
             left: -2px;
             opacity: 1;
             animation: bright 4s ease infinite;
@@ -185,9 +186,6 @@
                 }
             }
         }
-        button {
-            min-height: 47px;
-        }
 	}
     #result {
         #part1, #part2 {
@@ -197,11 +195,10 @@
 }
 @media (max-width: 600px) {
 	#search {
-		display: inline-block;
+        display: block;
 		height: fit-content;
 		width: 100%;
         .inputContainer {
-            display: block;
             width: 80vw;
             margin-bottom: 20px;
             margin-left: 50%;
@@ -210,14 +207,13 @@
         button {
             margin-left: 50%;
             transform: translateX(-50%);
-            &::after {
-                left: 0;
-                top: 60%;
-                width: 80px;
-                height: 20px;
-                animation: bright 5s ease infinite;
-                opacity: 0;
-            }
+            // &::after {
+            //     left: 0;
+            //     top: 60%;
+            //     height: 20px;
+            //     animation: bright 5s ease infinite;
+            //     opacity: 0;
+            // }
         }
 	}
 }
