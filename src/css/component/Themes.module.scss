@@ -23,7 +23,6 @@
     margin-bottom: 30px;
 }
 .themesMenu {
-    position: unset;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     padding: 50px 0;
@@ -62,4 +61,10 @@
 
 .theme_code {
     background-image: url(../image/background3.jpg);
+}
+
+@media (max-width: 600px) {
+    .preview {
+        width: 90vw;
+    }
 }

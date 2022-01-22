@@ -2,8 +2,8 @@
 
 import clsx from "clsx"
 
+import "../../../css/reset.css"
 import header from "../../../css/header.module.scss"
-import main from "../../../css/main.module.scss"
 import themes from "../../../css/component/Themes.module.scss"
 import unit from "../../../css/component/unit.module.scss"
 
@@ -16,13 +16,13 @@ function Themes ({ theme }) {
     window.scrollTo({top: 0, behavior: "smooth"})
 
     return (
-        <div className={`body_${theme}` + clsx(unit.unitAppearance)} >
+        <div className={clsx(unit.unitAppearance) + ` body_${theme}`} >
             <Refresh />
             <div className={clsx(header[`header_${theme}`], themes.header)} >
                 <div>あなたが好きなスタイルを<br/><br/>Preview</div>
                 <iframe src={`/?theme${theme}`} title="preview" className={clsx(themes.preview)}/>
             </div>
-            <div className={clsx(themes.themesMenu, main.main, main[`main_${theme}`])} >
+            <div className={clsx(themes.themesMenu)} >
                 {
                     themesArray.map((theme, i) => (<UnitTheme key={i} name={theme} />))
                 }

@@ -47,9 +47,10 @@ function Teaching ({ theme }) {
         color: "rgb(134, 255, 245)",
         backgroundColor: "rgba(0, 0, 0, 0.7)",
         padding: "15vh 0",
+        margin: "30px 0"
     }
 
-    return (<div className={clsx(unit.unitAppearance) + `body_${theme}`}>
+    return (<div className={clsx(unit.unitAppearance) + ` body_${theme}`}>
         <div id={clsx(teaching.subHeader)} />
         {
             body !== "welcome" ? 
@@ -62,11 +63,15 @@ function Teaching ({ theme }) {
             (body === "welcome") ? 
             <div style={resultStyle}>この科目って何にを勉強するの？と思うあなたへ<br/>
                 <br/><br/>検索可能な言葉:<br/><br/>
-                <ShowWords words={words} onClick={handleChoices} />
+                {
+                    words.length === 0 ?
+                    "LOADING ..." :
+                    <ShowWords words={words} onClick={handleChoices} />
+                }
             </div> : (
                 (body === "searching") ?
                 <div style={resultStyle}>検索可能な言葉:<br/><br/>
-                    <ShowWords words={choices} onClick={handleChoices} isArray={true} />
+                <ShowWords words={choices} onClick={handleChoices} isArray={true} />
                 </div> : (
                     (body === "noneData") ?
                     <div style={{...resultStyle, color: "rgb(200, 255, 0)"}}>一致するデータがありません。</div>

@@ -1,11 +1,10 @@
 
 .container {
     height: fit-content;
-    width: 50vw;
     position: absolute;
-    z-index: 20;
+    z-index: 200;
     top: 60px;
-    left: calc((50vw - 80px) / 4 - 5px);
+    width: 100%;
     border-radius: 2px;
     padding: 10px;
     max-height: 60vh;
@@ -22,9 +21,16 @@
 
 @media (max-width: 600px) {
     .container {
-        width: 80vw;
-        left: 0;
         margin-left: 50%;
         transform: translateX(-50%);
     }
+}
+
+.container_soft {
+    background-color: white;
+    color: black;
+}
+.container_code {
+    background-color: black;
+    color: white;
 }

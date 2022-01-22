@@ -1,15 +1,16 @@
 
 import clsx from 'clsx'
-import mainStyle from '../css/main.module.scss'
+import main from '../css/main.module.scss'
+import "../css/reset.css"
 
 import data from './text_data/homepage_text.json'
 import NavUnit from './main_nav/NavUnit'
 
 function Main({ theme }) {
-    const main = data[1].apps
+    const mainData = data[1].apps
 
-    return (<div className={clsx(mainStyle.main, mainStyle[`main_${theme}`])}>
-        {main.map((unit, index) => {
+    return (<div className={clsx(main.main) + ` body_${theme}`}>
+        {mainData.map((unit, index) => {
             return (<NavUnit 
                 key={index}
                 id={unit.id}

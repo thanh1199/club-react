@@ -4,19 +4,17 @@ import datalist from "../../../../css/component/Datalist.module.scss"
 
 function Datalist ({ 
     show=true, 
-    mode="darkMode", 
+    theme="soft", 
     condition=true, 
     lists=[], 
     intimeValue="", 
     handleSelect=f=>f
 }) 
 {
-    // const width = dependenceWidth.current ? dependenceWidth.current.clientWidth : 300
+    // const width = widthDependence.current ? widthDependence.current.clientWidth : 300
 
     const style = {
-        display: show ? "block" : "none",
-        backgroundColor: mode === "darkMode" ? "black" : "white",
-        color: mode === "darkMode" ? "white" : "black",
+        display: show ? "block" : "none"
     }
 
     const intimeOption__ = intimeValue.trim()
@@ -32,7 +30,7 @@ function Datalist ({
     >{content}</p>)
 
     return (
-        <div style={style} className={clsx(datalist.container)}>{
+        <div style={style} className={clsx(datalist.container ,datalist[`container_${theme}`])}>{
             condition ? 
             lists[0].map((option, i) => <Option key={i} content={option} />)
             :

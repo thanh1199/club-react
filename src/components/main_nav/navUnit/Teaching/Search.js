@@ -7,6 +7,7 @@ import Datalist from '../other/Datalist'
 
 
 function Search ({ mode, options, inputValue, showResult = f => f }) {
+
     if (localStorage.getItem("selected") === null) {
         localStorage.setItem("selected", "[]")
     }
@@ -47,29 +48,51 @@ function Search ({ mode, options, inputValue, showResult = f => f }) {
 
     const fillInput = (option) => setInput(() => option)
 
+
+    useEffect(() => {
+        document.addEventListener("scroll", showSearch)
+        return () => document.removeEventListener("scroll", showSearch)
+    }, [])
+
+    function showSearch () {
+        const y = window.scrollY
+        if (y > 5) {
+            document.getElementById(clsx(teaching.search)).classList.add(clsx(teaching.searchHidden))
+            setShowDatalist(() => false)
+        } else {
+            document.getElementById(clsx(teaching.search)).classList.remove(clsx(teaching.searchHidden))
+        }
+    }
+
     return (<>
-        <div id={clsx(teaching.search)} >
-            <input 
-                id='input'
-                className={clsx(teaching[`input_${mode}`])} 
-                type="text" 
-                required 
-                placeholder="フリン、線形代数、後期 ..." 
-                value={input}
-                onChange={(e) => handleInput(e.target.value)}
-                onFocus={() => setShowDatalist(() => true)}
-                onBlur={() => setShowDatalist(() => false)}
-                autoComplete="off"
-            />
-            <Datalist 
-                show={showDatalist} 
-                mode={mode} 
-                condition={needHistory} 
-                lists={[showedHistory, options]} 
-                intimeValue={input}
-                handleSelect={fillInput}
-            />
-            <button onClick={() => handleSearch(input)} >検索</button>
+        <div id={clsx(teaching.search)} className={clsx(teaching.searchShow)} >
+            <div className={clsx(teaching.inputContainer)}>
+                <input 
+                    id='input'
+                    className={clsx(teaching[`input_${mode}`])} 
+                    type="text" 
+                    required 
+                    placeholder= {options.length === 0 ? "LOADING" : "フリン、線形代数、後期 ..."}  
+                    value={input}
+                    onChange={(e) => handleInput(e.target.value)}
+                    onClick={() => setShowDatalist(() => true)}
+                    onBlur={() => setShowDatalist(() => false)}
+                    autoComplete="off"
+                />
+                <Datalist 
+                    show={showDatalist} 
+                    mode={mode} 
+                    condition={needHistory} 
+                    lists={[showedHistory, options]} 
+                    intimeValue={input}
+                    handleSelect={fillInput}
+                />
+            </div>
+            {
+                options.length === 0 ?
+                <button>Waiting Data</button> :
+                <button onClick={() => handleSearch(input)} >Search</button>
+            }
         </div>
     </>)
 }
